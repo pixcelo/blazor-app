@@ -8,3 +8,22 @@ Welcome to your new app.
 
 <!-- コンポーネントに引数を渡している？ -->
 <Counter IncrementAmount="10" />
+
+<br />
+<br />
+<input @onchange="InputChanged" />
+<p>@message</p>
+
+@code {
+    string message = "";
+
+    /// <summary>
+    /// イベント ハンドラー メソッドは、必要に応じて、イベントに関する情報を含むイベント引数を受け取ることができます。 
+    /// たとえば、次のように変更された入力要素の値にアクセスできます。
+    /// </summary>
+    /// <param name="e"></param>
+    void InputChanged(ChangeEventArgs e)
+    {
+        message = (string)e.Value;
+    }
+}
